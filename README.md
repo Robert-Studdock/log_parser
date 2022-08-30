@@ -5,7 +5,7 @@ This utility only works for a very specific format of log file seen in the `exam
 
 
 ## Installation
-```bash
+```sh
 # Source the python environment
 source ./bin/activate
 
@@ -14,13 +14,7 @@ pip install requirements.txt
 ```
 
 ## Usage
-```python3
-# Source the python environment
-source ./bin/activate
-
-# Install dependencies
-pip install requirements.txt
-
+```sh
 # Run log analysis with path to log file
 python3 log_analysis.py ./example-data.log
 ```
