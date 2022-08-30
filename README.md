@@ -19,7 +19,7 @@ pip install requirements.txt
 python3 log_analysis.py ./example-data.log
 ```
 
-# Known Improvements
+## Known Improvements
 - General better protected evaluation in specific areas of log parsing so that any descrepencies in log format can more easily be identified and accounted for
 - Print counts of most commonly occurring IP addresses and URLs
 - Parsing could be made much more robust using a log parsing library such as pylogparser
