@@ -42,33 +42,34 @@ def parse_log(file_path):
 
 parse_log('example-data.log')
 
-        ## ORIGINAL APPROACH
-        # try:
-        #     messageSearch = re.search(r'\".*\"',line)
-        #     logHeader = line[0:messageSearch.span()[0]]
-        #     logMessage = messageSearch[0]
-        # except Exception as e:
-        #     print("Error Separating header and message on line %d: %s "%(i,e))
+## ORIGINAL APPROACH
+# documented for discussion purposes
+# try:
+#     messageSearch = re.search(r'\".*\"',line)
+#     logHeader = line[0:messageSearch.span()[0]]
+#     logMessage = messageSearch[0]
+# except Exception as e:
+#     print("Error Separating header and message on line %d: %s "%(i,e))
 
-        # # parse log header contents
-        # try:
-        #     # match match from the start of the line till the last number before a hyphen
-        #     # uses a look ahead to stop searching for numbers at the first hyphen
-        #     # there is improved regex for IP matching but overkill for this scenario where it's position is predictable
-        #     ipAddress = re.search(r'.*[0-9](?=.+-)',logHeader)[0] 
+# # parse log header contents
+# try:
+#     # match match from the start of the line till the last number before a hyphen
+#     # uses a look ahead to stop searching for numbers at the first hyphen
+#     # there is improved regex for IP matching but overkill for this scenario where it's position is predictable
+#     ipAddress = re.search(r'.*[0-9](?=.+-)',logHeader)[0] 
 
-        #     # parse datetime and convert to UTC
-        #     dtString = re.search(r'\[.*\]',logHeader)[0].strip("[]") # timestamp
-        #     dtLocal = datetime.strptime(dtString,'%d/%b/%Y:%H:%M:%S %z').timestamp()
-        #     dtUTC = datetime.fromtimestamp(dtLocal, tz = timezone.utc)
+#     # parse datetime and convert to UTC
+#     dtString = re.search(r'\[.*\]',logHeader)[0].strip("[]") # timestamp
+#     dtLocal = datetime.strptime(dtString,'%d/%b/%Y:%H:%M:%S %z').timestamp()
+#     dtUTC = datetime.fromtimestamp(dtLocal, tz = timezone.utc)
 
-        #     # parse user - not required
-        #     # search for user between hyphen and open square bracket, remove spaces.
-        #     # user = re.search(r'(?<=-).*?(?=\[)',logHeader)[0].strip()
-        #     # TODO replace empty matches with null
-        #     # print(user)
+#     # parse user - not required
+#     # search for user between hyphen and open square bracket, remove spaces.
+#     # user = re.search(r'(?<=-).*?(?=\[)',logHeader)[0].strip()
+#     # TODO replace empty matches with null
+#     # print(user)
 
-        #     log_info.append({'ip_address':ipAddress, 'timestamp':dtUTC})
+#     log_info.append({'ip_address':ipAddress, 'timestamp':dtUTC})
 
-        # except Exception as e:
-        #     print("Error Parsing Log Message on line %d: %s "%(i,e))
+# except Exception as e:
+#     print("Error Parsing Log Message on line %d: %s "%(i,e))
